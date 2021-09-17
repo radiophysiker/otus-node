@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1.my-3 Course: #{course.name}
+  form#form(action="/api/course" method="put")
+    .mb-3
+      label.form-label(for="name") Название курса
+      input.form-control#name(type="text" name="name" value=course.name)
+    .mb-3
+      label.form-label(for="description") Описание курса
+      textarea.form-control#description(name="description") #{course.description}
+    button(type="submit" class="btn btn-primary") Сохранить
+    script(src='/js/course.js')

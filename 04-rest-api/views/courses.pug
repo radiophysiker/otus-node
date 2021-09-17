@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1.my-3 Courses list
+  ul.list-group
+    each val in courses
+      li.list-group-item
+        a(href='/course/' + val._id)= val.name
